@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<main>
+    <section id="hero">
+        <div class="grid grid-cols-2 h-screen">
+            <div class="bg-blue-500 text-center p-16">
+                <p>di sini hero image</p>
+            </div>
+            <div class="bg-red-500 p-16">
+                <div id="landing-text">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ratione minima ad at placeat,
+                        sapiente facilis minus veniam commodi itaque excepturi reiciendis sequi esse! Rerum ipsa
+                        necessitatibus animi. Atque, nesciunt?</p>
+                </div>
+                <div id="buttons" class="pt-8">
+                    <button class="border-black border-2 p-4 hover:text-white hover:bg-black rounded-full ease-linear duration-100">
+                        <a href="#">Lihat RPJP</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="choices">
+        <div class="m-4">
+            <h2>Pilih Sektor</h2>
+            <div class="h-screen grid grid-cols-4 grid-rows-4 gap-4 text-center my-4">
+                {% for sektor in sektor %}
+                <button type="submit" class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100" value="{{ sektor.nama_sektor }}">
+                    <a href="{{ url_for('sektor', sektor = sektor) }}">{{ sektor.alias_sektor }}</a>
+                </button>
+                {% endfor %}
+                <!-- <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Pertanian</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Kelautan</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Kehutanan</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Pendidikan</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Perkebunan</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Energi</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Pariwisata</a>
+                </button>
+
+                <button class="bg-red-700 h-32 hover:bg-blue-700 ease-linear duration-100">
+                    <a href="#">Sektor Pelayanan Publik</a>
+                </button> -->
+            </div>
+        </div>
+
+    </section>
+</main>
+{% endblock content %}
