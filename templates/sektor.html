@@ -1,11 +1,76 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Alias sektor {{ sektor.alias_sektor }}</h1>
-<h1>Nama sektor {{ sektor.nama_sektor }}</h1>
+<h2 class="text-lg m-8 font-bold">
+{{ sektor.nama_sektor }}
+</h2>
 
-{{ if }}
-<div class="h-32 bg-blue-900">
+{% if sektor.alias_sektor == 'sektor_kp' %}
+<section class="h-screen ">
+    <div class="p-16 grid grid-rows-3 gap-8">
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
 
-</div>
-{{ endif }}
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
+
+        </div>
+    </div>
+</section>
+
+{% elif sektor.alias_sektor == 'sektor_pariwisata' %}
+<section class="h-screen ">
+    <div class="p-16 grid grid-rows-3 gap-8">
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+
+        </div>
+    </div>
+</section>
+
+{% elif sektor.alias_sektor == 'sektor_pertanian' %}
+<section class="h-screen ">
+    <div class="p-16 grid grid-rows-3 gap-8">
+        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
+
+        </div>
+    </div>
+</section>
+
+{% elif sektor.alias_sektor == 'sektor_perdagangan' %}
+<section class="h-screen">
+    <div class="p-16 grid grid-rows-3 gap-8">
+        <div class="rounded-lg border-2 border-black h-32 bg-gray-500">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-gray-500">
+
+        </div>
+
+        <div class="rounded-lg border-2 border-black h-32 bg-gray-500">
+
+        </div>
+    </div>
+</section>
+
+{% endif %}
 {% endblock content %}

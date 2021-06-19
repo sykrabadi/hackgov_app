@@ -18,7 +18,7 @@ class Sektor_Table(db.Model):
     nama_sektor = db.Column(db.String(length=1024), nullable=False)
 
     def __repr__(self):
-        return self.alias_sektor
+        return f'{self.alias_sektor}'
 
 @app.route("/home")
 def home():
