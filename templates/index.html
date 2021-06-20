@@ -31,7 +31,7 @@
                     <a href="{{ url_for('sektor', sektor = sektor) }}">{{ sektor.nama_sektor }}</a>
                 </button>
 
-                {% elif sektor.alias_sektor == 'sektor_pariwisata' %}
+                {% elif sektor.alias_sektor == 'sektor_pendidikan' %}
                 <button type="submit" class="border-2 border-black h-32 hover:bg-blue-300 ease-linear duration-100" value="{{ sektor.nama_sektor }}">
                     <a href="{{ url_for('sektor', sektor = sektor) }}">{{ sektor.nama_sektor }}</a>
                 </button>
@@ -41,8 +41,8 @@
                     <a href="{{ url_for('sektor', sektor = sektor) }}">{{ sektor.nama_sektor }}</a>
                 </button>
 
-                {% elif sektor.alias_sektor == 'sektor_perdagangan' %}
-                <button type="submit" class="border-2 border-black h-32 hover:bg-gray-500 ease-linear duration-100" value="{{ sektor.nama_sektor }}">
+                {% elif sektor.alias_sektor == 'sektor_kesehatan' %}
+                <button type="submit" class="border-2 border-black h-32 hover:bg-green-500 ease-linear duration-100" value="{{ sektor.nama_sektor }}">
                     <a href="{{ url_for('sektor', sektor = sektor) }}">{{ sektor.nama_sektor }}</a>
                 </button>
                 {% endif %}

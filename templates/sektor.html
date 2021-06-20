@@ -4,7 +4,7 @@
 {{ sektor.nama_sektor }}
 </h2>
 
-{% if sektor.alias_sektor == 'sektor_kp' %}
+{% if sektor.id == 1 %}
 <section class="h-screen ">
     <div class="p-16 grid grid-rows-3 gap-8">
         <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
@@ -21,52 +21,50 @@
     </div>
 </section>
 
-{% elif sektor.alias_sektor == 'sektor_pariwisata' %}
+{% elif sektor.id == 2 %}
+
 <section class="h-screen ">
     <div class="p-16 grid grid-rows-3 gap-8">
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+        <div class="rounded-lg border-2 border-black h-32 bg-green-500">
 
         </div>
 
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+        <div class="rounded-lg border-2 border-black h-32 bg-green-500">
 
         </div>
 
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+        <div class="rounded-lg border-2 border-black h-32 bg-green-500">
 
         </div>
     </div>
 </section>
 
-{% elif sektor.alias_sektor == 'sektor_pertanian' %}
+{% elif sektor.id == 3 %}
+<div>
+    {{ sektor.pembangunan }}
+</div>
 <section class="h-screen ">
-    <div class="p-16 grid grid-rows-3 gap-8">
-        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
-
+    <div class="p-16 grid gap-8">
+        {% for pembangunan in sektor.pembangunan %}
+        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
+            {{ pembangunan.kodeTender }}
         </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
-
-        </div>
+        {% endfor %}
     </div>
 </section>
 
-{% elif sektor.alias_sektor == 'sektor_perdagangan' %}
+{% elif sektor.id == 4 %}
 <section class="h-screen">
     <div class="p-16 grid grid-rows-3 gap-8">
-        <div class="rounded-lg border-2 border-black h-32 bg-gray-500">
+        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
 
         </div>
 
-        <div class="rounded-lg border-2 border-black h-32 bg-gray-500">
+        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
 
         </div>
 
-        <div class="rounded-lg border-2 border-black h-32 bg-gray-500">
+        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
 
         </div>
     </div>
