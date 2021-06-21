@@ -1,86 +1,141 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="text-lg m-8 font-bold">
+<h2 class="text-2xl m-16 font-bold">
     {{ sektor.nama_sektor }}
 </h2>
+<a href="{{ url_for('home') }}"
+    class="mx-16 my-4 rounded-xl  p-4 border-red-400 border-2 bg-white hover:bg-red-400 ease-in-out duration-150">
+    <button class="">
+        Kembali Ke Beranda
+    </button>
+</a>
+
 
 {% if sektor.id == 1 %}
 <section class="h-screen ">
-    <div class="p-16 grid grid-rows-3 gap-8">
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-700">
-
-        </div>
+    {% if sektor.pembangunan == [] %}
+    <div class="p-16 grid gap-8 text-center">
+        <p>Tidak ada pembangunan untuk saat ini. Silakan kembali lagi nanti</p>
     </div>
+    {% else %}
+    <div class="p-16 grid gap-8">
+        {% for pembangunan in sektor.pembangunan %}
+        <div class="rounded-lg border-2 shadow-lg bg-blue-700 p-8 flex place-items-center relative ">
+            <div>
+                <div class="bg-white h-32 w-32 border-2 border-black">
+
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold">Nama Pembangunan &emsp; : {{ pembangunan.namaPembangunan }}</h3>
+                <h4>Kode Tender &emsp; : {{ pembangunan.kodeTender }}</h4>
+            </div>
+            <a href="{{ url_for('detail', kodeTender = pembangunan.kodeTender) }}"
+                class="absolute right-8 bg-white border-2 border-white hover:bg-blue-700 p-4 rounded-xl ease-linear duration-150">
+                <button>
+                    Lihat Detail Pembangunan
+                </button>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 </section>
 
 {% elif sektor.id == 2 %}
 
 <section class="h-screen ">
-    <div class="p-16 grid grid-rows-3 gap-8">
-        <div class="rounded-lg border-2 border-black h-32 bg-green-500">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-green-500">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-green-500">
-
-        </div>
+    {% if sektor.pembangunan == [] %}
+    <div class="p-16 grid gap-8 text-center">
+        <p>Tidak ada pembangunan untuk saat ini. Silakan kembali lagi nanti</p>
     </div>
-</section>
-
-{% elif sektor.id == 3 %}
-<section class="h-screen ">
-    <div class="p-16 grid gap-8">
+    {% else %}
+        <div class="p-16 grid gap-8">
         {% for pembangunan in sektor.pembangunan %}
-        <div class="rounded-lg border-2 shadow-lg bg-blue-300 p-8 flex flex-col">
+        <div class="rounded-lg border-2 shadow-lg bg-green-500 p-8 flex place-items-center relative ">
             <div>
-                <div class="bg-white h-full border-2 border-black">
+                <div class="bg-white h-32 w-32 border-2 border-black">
 
                 </div>
             </div>
             <div>
-                <h3 class="font-bold">Nama Pembangunan  &emsp; : {{ pembangunan.namaPembangunan }}</h3>
+                <h3 class="font-bold">Nama Pembangunan &emsp; : {{ pembangunan.namaPembangunan }}</h3>
                 <h4>Kode Tender &emsp; : {{ pembangunan.kodeTender }}</h4>
             </div>
+            <a href="{{ url_for('detail', kodeTender = pembangunan.kodeTender) }}"
+                class="absolute right-8 bg-white border-2 border-white hover:bg-green-500 p-4 rounded-xl ease-linear duration-150">
+                <button>
+                    Lihat Detail Pembangunan
+                </button>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% elif sektor.id == 3 %}
+<section class="h-screen ">
+    {% if sektor.pembangunan == [] %}
+    <div class="p-16 grid gap-8 text-center">
+        <p>Tidak ada pembangunan untuk saat ini. Silakan kembali lagi nanti</p>
+    </div>
+    {% else %}
+    <div class="p-16 grid gap-8">
+        {% for pembangunan in sektor.pembangunan %}
+        <div class="rounded-lg border-2 shadow-lg bg-blue-300 p-8 flex place-items-center relative ">
             <div>
-                <a href="{{ url_for('detail', kodeTender = pembangunan.kodeTender) }}">
+                <div class="bg-white h-32 w-32 border-2 border-black">
+
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold">Nama Pembangunan &emsp; : {{ pembangunan.namaPembangunan }}</h3>
+                <h4>Kode Tender &emsp; : {{ pembangunan.kodeTender }}</h4>
+            </div>
+            <a href="{{ url_for('detail', kodeTender = pembangunan.kodeTender) }}"
+                class="absolute right-8 bg-white border-2 border-white hover:bg-blue-300 p-4 rounded-xl ease-linear duration-150">
+                <button>
+                    Lihat Detail Pembangunan
+                </button>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+
+{% elif sektor.id == 4 %}
+<section class="h-screen">
+    {% if sektor.pembangunan == [] %}
+    <div class="p-16 grid gap-8 text-center">
+        <p>Tidak ada pembangunan untuk saat ini. Silakan kembali lagi nanti</p>
+    </div>
+    {% else %}
+
+    <div class="p-16 flex place-items-center relative rounded-lg">
+        <div class="p-16 grid gap-8">
+            {% for pembangunan in sektor.pembangunan %}
+            <div class="rounded-lg border-2 shadow-lg bg-red-500 p-8 flex place-items-center relative ">
+                <div>
+                    <div class="bg-white h-32 w-32 border-2 border-black">
+
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold">Nama Pembangunan &emsp; : {{ pembangunan.namaPembangunan }}</h3>
+                    <h4>Kode Tender &emsp; : {{ pembangunan.kodeTender }}</h4>
+                </div>
+                <a href="{{ url_for('detail', kodeTender = pembangunan.kodeTender) }}"
+                    class="absolute right-8 bg-white border-2 border-white hover:bg-red-500 p-4 rounded-xl ease-linear duration-150">
                     <button>
                         Lihat Detail Pembangunan
                     </button>
                 </a>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-
-    </div>
-</section>
-
-{% elif sektor.id == 4 %}
-<section class="h-screen">
-    <div class="p-16 grid grid-rows-3 gap-8">
-        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
-
-        </div>
-
-        <div class="rounded-lg border-2 border-black h-32 bg-red-500">
-
-        </div>
-    </div>
+        {% endif %}
 </section>
 
 {% endif %}
