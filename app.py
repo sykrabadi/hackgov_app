@@ -45,5 +45,10 @@ def sektor(sektor):
     sektor = sektorTable.query.filter_by(id = sektor).first()
     return render_template("sektor.html", sektor = sektor)
 
+@app.route("/detail/<kodeTender>")
+def detail(kodeTender):
+    detail = pembangunanSektorTable.query.filter_by(kodeTender = kodeTender).first()
+    return render_template("detail.html", detail = detail)
+
 if __name__ == "__main__":
     app.run(debug=True)

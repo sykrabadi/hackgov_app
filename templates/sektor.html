@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h2 class="text-lg m-8 font-bold">
-{{ sektor.nama_sektor }}
+    {{ sektor.nama_sektor }}
 </h2>
 
 {% if sektor.id == 1 %}
@@ -40,16 +40,29 @@
 </section>
 
 {% elif sektor.id == 3 %}
-<div>
-    {{ sektor.pembangunan }}
-</div>
 <section class="h-screen ">
     <div class="p-16 grid gap-8">
         {% for pembangunan in sektor.pembangunan %}
-        <div class="rounded-lg border-2 border-black h-32 bg-blue-300">
-            {{ pembangunan.kodeTender }}
+        <div class="rounded-lg border-2 shadow-lg bg-blue-300 p-8 flex flex-col">
+            <div>
+                <div class="bg-white h-full border-2 border-black">
+
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold">Nama Pembangunan  &emsp; : {{ pembangunan.namaPembangunan }}</h3>
+                <h4>Kode Tender &emsp; : {{ pembangunan.kodeTender }}</h4>
+            </div>
+            <div>
+                <a href="{{ url_for('detail', kodeTender = pembangunan.kodeTender) }}">
+                    <button>
+                        Lihat Detail Pembangunan
+                    </button>
+                </a>
+            </div>
         </div>
         {% endfor %}
+
     </div>
 </section>
 

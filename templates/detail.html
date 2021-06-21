@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="my-8 mx-16 shadow-2xl rounded-3xl">
+    {% if detail.relasi_sektor == 1 %}
+    <div class="bg-blue-700 h-screen">
+        <h4>Nama Pembangunan  &emsp; : {{ detail.namaPembangunan }}</h4>
+        <h4>Kode Tender  &emsp; : {{ detail.kodeTender }}</h4>
+        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
+        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
+        <h4>Syarat Kualifikasi</h4>
+        <p>
+            {{ detail.syaratKualifikasi }}
+        </p>
+        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
+    </div>
+
+    {% elif detail.relasi_sektor == 2 %}
+    <div class=" bg-green-500 h-screen">
+        <h4>Nama Pembangunan  &emsp; : {{ detail.namaPembangunan }}</h4>
+        <h4>Kode Tender  &emsp; : {{ detail.kodeTender }}</h4>
+        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
+        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
+        <h4>Syarat Kualifikasi</h4>
+        <p>
+            {{ detail.syaratKualifikasi }}
+        </p>
+        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
+    </div>
+
+    {% elif detail.relasi_sektor == 3 %}
+    <div class="bg-blue-300 h-screen">
+        <h4>Nama Pembangunan  &emsp; : {{ detail.namaPembangunan }}</h4>
+        <h4>Kode Tender  &emsp; : {{ detail.kodeTender }}</h4>
+        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
+        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
+        <h4>Syarat Kualifikasi</h4>
+        <p>
+            {{ detail.syaratKualifikasi }}
+        </p>
+        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
+    </div>
+
+    {% elif detail.relasi_sektor == 4 %}
+    <div class=" bg-red-500 h-screen">
+        <h4>Nama Pembangunan  &emsp; : {{ detail.namaPembangunan }}</h4>
+        <h4>Kode Tender  &emsp; : {{ detail.kodeTender }}</h4>
+        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
+        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
+        <h4>Syarat Kualifikasi</h4>
+        <p>
+            {{ detail.syaratKualifikasi }}
+        </p>
+        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
+    </div>
+
+    {% endif %}
+</section>
+{% endblock content %}
