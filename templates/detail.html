@@ -2,18 +2,12 @@
 {% block content %}
 <section class="my-8 mx-16 shadow-2xl rounded-3xl">
     {% if detail.relasi_sektor == 1 %}
-    <div>
-        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
-            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
-            <button class="">
-                Kembali Ke Daftar Pembangunan
-            </button>
-        </a>
-    </div>
-
     <div class="bg-blue-700 h-screen flex flex-col rounded-lg mt-16">
-        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden relative"
             style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+            <div class="absolute">
+                <span class="bg-red-900">Hehehe</span>
+            </div>
         </div>
         <div class="p-16 flex flex-col">
             <table class="table-auto mx-8  mt-8">
@@ -41,26 +35,26 @@
                     {{ detail.syaratKualifikasi }}
                 </p>
             </div>
-            <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
-                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-700 mx-auto" target="_blank">
-                Lihat Dokumen
-            </a>
+            <div class="text-center">
+                <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+                    class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+                    <button class="">
+                        Kembali Ke Daftar Pembangunan
+                    </button>
+                </a>
+                <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
+                    class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-300 mx-auto" target="_blank">
+                    Lihat Dokumen
+                </a>
+                </div>
         </div>
     </div>
 
     {% elif detail.relasi_sektor == 2 %}
-    <div>
-        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
-            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
-            <button class="">
-                Kembali Ke Daftar Pembangunan
-            </button>
-        </a>
-    </div>
-
     <div class="bg-green-500 h-screen flex flex-col rounded-lg mt-16">
-        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden relative"
             style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+            <span class="bg-red-300 absolute right-8">Hehehe</span>
         </div>
         <div class="p-16 flex flex-col">
             <table class="table-auto mx-8  mt-8">
@@ -88,26 +82,26 @@
                     {{ detail.syaratKualifikasi }}
                 </p>
             </div>
-            <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
-                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-green-500 mx-auto" target="_blank">
-                Lihat Dokumen
-            </a>
+            <div class="text-center">
+                <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+                    class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+                    <button class="">
+                        Kembali Ke Daftar Pembangunan
+                    </button>
+                </a>
+                <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
+                    class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-300 mx-auto" target="_blank">
+                    Lihat Dokumen
+                </a>
+                </div>
         </div>
     </div>
 
     {% elif detail.relasi_sektor == 3 %}
-    <div>
-        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
-            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
-            <button class="">
-                Kembali Ke Daftar Pembangunan
-            </button>
-        </a>
-    </div>
-
     <div class="bg-blue-300 h-screen flex flex-col rounded-lg mt-16">
-        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden relative"
             style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+                <span class="bg-red-300 absolute right-8 p-4 m-4 rounded-full">{{ detail.statusPembangunan }}</span>
         </div>
         <div class="p-16 flex flex-col">
             <table class="table-auto mx-8  mt-8">
@@ -135,26 +129,28 @@
                     {{ detail.syaratKualifikasi }}
                 </p>
             </div>
+            <div class="text-center">
+            <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+                class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+                <button class="">
+                    Kembali Ke Daftar Pembangunan
+                </button>
+            </a>
             <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
                 class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-300 mx-auto" target="_blank">
                 Lihat Dokumen
             </a>
+            </div>
         </div>
     </div>
 
     {% elif detail.relasi_sektor == 4 %}
-    <div>
-        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
-            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
-            <button class="">
-                Kembali Ke Daftar Pembangunan
-            </button>
-        </a>
-    </div>
-
     <div class="bg-red-500 h-screen flex flex-col rounded-lg mt-16">
-        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden relative"
             style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+            <div class="absolute">
+                <span class="bg-red-900">Hehehe</span>
+            </div>
         </div>
         <div class="p-16 flex flex-col">
             <table class="table-auto mx-8  mt-8">
@@ -182,10 +178,18 @@
                     {{ detail.syaratKualifikasi }}
                 </p>
             </div>
-            <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
-                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-red-500 mx-auto" target="_blank">
-                Lihat Dokumen
-            </a>
+            <div class="text-center">
+                <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+                    class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+                    <button class="">
+                        Kembali Ke Daftar Pembangunan
+                    </button>
+                </a>
+                <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
+                    class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-300 mx-auto" target="_blank">
+                    Lihat Dokumen
+                </a>
+                </div>
         </div>
     </div>
 

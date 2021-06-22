@@ -3,8 +3,8 @@
 
 {% if sektor.id == 1 %}
 <section class="h-full">
-    <div class="p-8 rounded-b-lg shadow-lg bg-gradient-to-r from-blue-700">
-        <h2 class="text-2xl m-16 font-bold">
+    <div class="p-8 rounded-b-lg shadow-lg bg-blue-700 bg-cover bg-no-repeat" style="background-image: url(../static/img/sektor_kkp.png);">
+        <h2 class="text-2xl m-16 font-bold text-white">
             {{ sektor.nama_sektor }}
         </h2>
         <a href="{{ url_for('home') }}"
@@ -41,8 +41,8 @@
 
 {% elif sektor.id == 2 %}
 <section class="h-full">
-    <div class="bg-gradient-to-r from-green-500 p-8 rounded-b-lg shadow-lg">
-        <h2 class="text-2xl m-16 font-bold">
+    <div class="p-8 rounded-b-lg shadow-lg bg-green-500 bg-cover bg-no-repeatn" style="background-image: url(../static/img/sektor_kesehatan.png);">
+        <h2 class="text-2xl m-16 font-bold text-white">
             {{ sektor.nama_sektor }}
         </h2>
         <a href="{{ url_for('home') }}"
@@ -79,8 +79,8 @@
 
 {% elif sektor.id == 3 %}
 <section class="h-full">
-    <div class="bg-gradient-to-r from-blue-300 p-8 rounded-b-lg shadow-lg">
-        <h2 class="text-2xl m-16 font-bold">
+    <div class="p-8 rounded-b-lg shadow-lg bg-blue-300 bg-cover bg-no-repeat" style="background-image: url(../static/img/pexels-pixabay-161293\ 1.png);">
+        <h2 class="text-2xl m-16 font-bold text-white">
             {{ sektor.nama_sektor }}
         </h2>
         <a href="{{ url_for('home') }}"
@@ -117,8 +117,8 @@
 
 {% elif sektor.id == 4 %}
 <section class="h-full">
-    <div class="bg-gradient-to-r from-red-500 p-8 rounded-b-lg shadow-lg">
-        <h2 class="text-2xl m-16 font-bold">
+    <div class="p-8 rounded-b-lg shadow-lg bg-red-500 bg-cover bg-no-repeat" style="background-image: url(../static/img/pexels-tom-fisk-2531446\ 1.png);">
+        <h2 class="text-2xl m-16 font-bold text-white">
             {{ sektor.nama_sektor }}
         </h2>
         <a href="{{ url_for('home') }}"
