@@ -63,5 +63,9 @@ def detail(kodeTender):
 def faq():
     return render_template("faq.html")
 
+@app.route('/laporkan')
+def laporkan():
+    return render_template("laporkan.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

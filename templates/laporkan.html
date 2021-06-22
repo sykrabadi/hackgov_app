@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="px-8 pt-8 h-full ">
+    <div class="p-8 rounded-lg shadow-xl bg-blue-100"
+        style="background-image: url(../static/img/faqbg.png); background-size: cover;">
+        <div class="text-2xl text-bold text-center font-bold text-blue-800">
+            <h1>
+                Laporkan Masalah Pembangunan
+            </h1>
+        </div>
+        <div class="p-16">
+            <form action="" class="right-3.5">
+                <div class="my-4">
+                    <label for="fname">Nama</label><br>
+                    <input type="text" name="fname" id="fname"
+                        class="form-input border-black border-2 rounded-xl w-1/2 p-4"><br>
+                </div>
+                <div  class="my-4">
+                    <label for="femail">Email</label><br>
+                    <input type="email" name="femail" id="femail"
+                        class="form-input border-black border-2 rounded-xl w-1/2 p-4"><br>
+                </div>
+                <div  class="my-4">
+                    <label for="flokasi">Lokasi Pembangunan</label><br>
+                    <input type="email" name="flokasi" id="flokasi"
+                        class="form-input border-black border-2 rounded-xl w-1/2 p-4"><br>
+                </div>
+                <div  class="my-4">
+                    <label for="flaporan">Laporan</label><br>
+                    <input type="email" name="flaporan" id="flaporan"
+                        class="form-input border-black border-2 rounded-xl  w-1/2 p-4 h-32"><br>
+                </div>
+                <div class="my-4">
+                    <label for="fgambar">Unggah Gambar</label><br>
+                    <input type="file" name="fgambar" id="fgambar"
+                        class=" border-black border-2 rounded-xl p-2"><br>
+                </div>
+                <input type="submit" name="submit" class="p-2 border-2 border-green-500 hover:bg-green-500 rounded-lg duration-100 ease-linear">
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}

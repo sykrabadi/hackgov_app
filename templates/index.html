@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-<main>
     <section id="hero">
-        <div class="grid grid-cols-2 h-screen">
-            <div class="bg-gray-400 text-center p-16">
+        <div class="grid grid-cols-2 h-screen text-white rounded-xl">
+            <div class=" text-center p-16" style="background-color: #286FB4;">
                 <img src="../static/img/Browser.png" alt="">
             </div>
-            <div class="bg-gray-400 p-16">
+            <div class="p-16" style="background-color: #286FB4;">
                 <div id="landing-text">
+                    <h1 class="font-bold text-3xl">Pembangunan Kota Surabaya</h1><br>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ratione minima ad at placeat,
                         sapiente facilis minus veniam commodi itaque excepturi reiciendis sequi esse! Rerum ipsa
                         necessitatibus animi. Atque, nesciunt?</p>
                 </div>
                 <div id="buttons" class="pt-8">
                     <button
-                        class="border-black border-2 p-4 hover:text-white hover:bg-black rounded-2xl ease-linear duration-100">
+                        class="border-red-700 border-2 p-4 hover:text-white hover:bg-red-700 rounded-2xl ease-linear duration-100">
                         <a href="https://drive.google.com/drive/folders/1L02p8u-GrGyem2CGxPsjlej9TM_ZmFMT"
                             target="_blank">Lihat Dokumen Pendukung</a>
                     </button>
@@ -24,7 +24,7 @@
     </section>
 
     <section id="choices" class="h-full">
-        <div class="p-8">
+        <div class="p-8" >
             <h2 class="mb-4 text-lg font-bold text-center">Pilih Sektor</h2>
             <div class="grid grid-cols-4 gap-4 text-center my-4">
                 {% for sektor in sektor %}
@@ -101,5 +101,4 @@
             </div>
         </div>
     </section>
-</main>
 {% endblock content %}

@@ -10,23 +10,62 @@
     <link rel="stylesheet" href="{{ ASSET_URL }}">
     {% endassets %}
     <link rel="icon" href="{{ url_for('static', filename='kawalpembangunanlogo.jpg') }}">
+    
     <title>Kawal Pembangunan</title>
 </head>
 
 <body>
     <nav class="h-16 text-lg p-4 border-b-2 border-black ">
-        <div class="relative">
-            <span class="font-bold uppercase text-lg">
-                Kawal Pembangunan
-            </span>
-            <a href="{{ url_for('home') }}" class="hover:text-red-500 mx-16 ease-linear duration-100">Home</a>
-            <a href="{{ url_for('faq') }}" class="hover:text-red-500 mx-16 ease-linear duration-100">FAQ</a>
-            <a href="#" class="hover:text-red-500 mx-16 ease-linear duration-100">Laporkan</a>
+        <div id="navContainer">
+            <ul class="flex">
+                <li class="font-bold uppercase text-lg">Kawal Pembangunan</li>
+                <li><a href="{{ url_for('home') }}"
+                        class="mx-16 ease-linear duration-100">Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('faq') }}" class="mx-16 ease-linear duration-100">FAQ</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('laporkan') }}" class="mx-16 ease-linear duration-100">Laporkan</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    {% block content %}
 
-    {% endblock content %}
+    <main>
+        {% block content %}
+
+        {% endblock content %}
+    </main>
+
+    <footer class="">
+        <div class="h-full p-16 flex w-full relative">
+        <div>
+            <span class="font-bold uppercase">Kawal Pembangunan</span><br>
+            <span>&copy; 2021</span><br>
+            <span>Privacy - Terms</span>
+        </div>
+        <div class="right-12 absolute">
+            <img src="../static/kawalpembangunanlogo.jpg" alt="" class="h-24 w-24">
+        </div>
+        </div>
+    </footer>
 </body>
+    <style>
+        ul li a.active {    
+            border-bottom: 2px solid black;
+        }
+    </style>
+    <script>
+        const currentLoc = location.href;
+        const menuItem = document.querySelectorAll('a');
+        const menuLength = menuItem.length;
+        for (let i=0; i<menuLength; i++){
+            if(menuItem[i].href === currentLoc){
+                menuItem[i].className = "mx-16 ease-linear duration-100 active" 
+            }
+        }
+    </script>
 
 </html>
