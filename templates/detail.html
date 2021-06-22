@@ -2,39 +2,16 @@
 {% block content %}
 <section class="my-8 mx-16 shadow-2xl rounded-3xl">
     {% if detail.relasi_sektor == 1 %}
-    <div class="bg-blue-700 h-screen">
-        <div>
-
-        </div>
-        <div>
-
-        </div>
-        <h4>Nama Pembangunan &emsp; : {{ detail.namaPembangunan }}</h4>
-        <h4>Kode Tender &emsp; : {{ detail.kodeTender }}</h4>
-        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
-        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
-        <h4>Syarat Kualifikasi</h4>
-        <p>
-            {{ detail.syaratKualifikasi }}
-        </p>
-        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
+    <div>
+        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+            <button class="">
+                Kembali Ke Daftar Pembangunan
+            </button>
+        </a>
     </div>
 
-    {% elif detail.relasi_sektor == 2 %}
-    <div class=" bg-green-500 h-screen">
-        <h4>Nama Pembangunan &emsp; : {{ detail.namaPembangunan }}</h4>
-        <h4>Kode Tender &emsp; : {{ detail.kodeTender }}</h4>
-        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
-        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
-        <h4>Syarat Kualifikasi</h4>
-        <p>
-            {{ detail.syaratKualifikasi }}
-        </p>
-        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
-    </div>
-
-    {% elif detail.relasi_sektor == 3 %}
-    <div class="bg-blue-300 h-screen flex flex-col rounded-lg">
+    <div class="bg-blue-700 h-screen flex flex-col rounded-lg mt-16">
         <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
             style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
         </div>
@@ -65,24 +42,151 @@
                 </p>
             </div>
             <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
-                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-300 mx-auto">
+                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-700 mx-auto" target="_blank">
                 Lihat Dokumen
             </a>
         </div>
+    </div>
 
+    {% elif detail.relasi_sektor == 2 %}
+    <div>
+        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+            <button class="">
+                Kembali Ke Daftar Pembangunan
+            </button>
+        </a>
+    </div>
+
+    <div class="bg-green-500 h-screen flex flex-col rounded-lg mt-16">
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+            style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+        </div>
+        <div class="p-16 flex flex-col">
+            <table class="table-auto mx-8  mt-8">
+                <tbody class="">
+                    <tr class="mb-4">
+                        <td class="text-3xl font-bold">{{ detail.namaPembangunan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kode Tender</td>
+                        <td>{{ detail.kodeTender }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nilai HPS</td>
+                        <td>{{ detail.nilaiHps }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kualifikasi Usaha</td>
+                        <td>{{ detail.kualifikasiUsaha }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="m-8">
+                <h4 class="text-2xl font-bold">Syarat Kualifikasi</h4>
+                <p>
+                    {{ detail.syaratKualifikasi }}
+                </p>
+            </div>
+            <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
+                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-green-500 mx-auto" target="_blank">
+                Lihat Dokumen
+            </a>
+        </div>
+    </div>
+
+    {% elif detail.relasi_sektor == 3 %}
+    <div>
+        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+            <button class="">
+                Kembali Ke Daftar Pembangunan
+            </button>
+        </a>
+    </div>
+
+    <div class="bg-blue-300 h-screen flex flex-col rounded-lg mt-16">
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+            style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+        </div>
+        <div class="p-16 flex flex-col">
+            <table class="table-auto mx-8  mt-8">
+                <tbody class="">
+                    <tr class="mb-4">
+                        <td class="text-3xl font-bold">{{ detail.namaPembangunan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kode Tender</td>
+                        <td>{{ detail.kodeTender }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nilai HPS</td>
+                        <td>{{ detail.nilaiHps }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kualifikasi Usaha</td>
+                        <td>{{ detail.kualifikasiUsaha }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="m-8">
+                <h4 class="text-2xl font-bold">Syarat Kualifikasi</h4>
+                <p>
+                    {{ detail.syaratKualifikasi }}
+                </p>
+            </div>
+            <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
+                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-blue-300 mx-auto" target="_blank">
+                Lihat Dokumen
+            </a>
+        </div>
     </div>
 
     {% elif detail.relasi_sektor == 4 %}
-    <div class=" bg-red-500 h-screen">
-        <h4>Nama Pembangunan &emsp; : {{ detail.namaPembangunan }}</h4>
-        <h4>Kode Tender &emsp; : {{ detail.kodeTender }}</h4>
-        <h4>Nilai HPS &emsp; : {{ detail.nilaiHps }}</h4>
-        <h4>Kualifikasi Usaha &emsp; {{ detail.kualifikasiUsaha }}</h4>
-        <h4>Syarat Kualifikasi</h4>
-        <p>
-            {{ detail.syaratKualifikasi }}
-        </p>
-        <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang">Lihat Detail</a>
+    <div>
+        <a href="{{ url_for('sektor', sektor = detail.relasi_sektor) }}"
+            class="mx-16 my-4 rounded-xl  p-4 border-yellow-400 border-2 bg-white hover:bg-yellow-400 ease-in-out duration-150">
+            <button class="">
+                Kembali Ke Daftar Pembangunan
+            </button>
+        </a>
+    </div>
+
+    <div class="bg-red-500 h-screen flex flex-col rounded-lg mt-16">
+        <div class="bg-cover bg-center h-screen w-full bg-no-repeat overflow-hidden"
+            style="background-image: url(../static/img/{{detail.kodeTender}}.jpg);">
+        </div>
+        <div class="p-16 flex flex-col">
+            <table class="table-auto mx-8  mt-8">
+                <tbody class="">
+                    <tr class="mb-4">
+                        <td class="text-3xl font-bold">{{ detail.namaPembangunan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kode Tender</td>
+                        <td>{{ detail.kodeTender }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nilai HPS</td>
+                        <td>{{ detail.nilaiHps }}</td>
+                    </tr>
+                    <tr>
+                        <td>Kualifikasi Usaha</td>
+                        <td>{{ detail.kualifikasiUsaha }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="m-8">
+                <h4 class="text-2xl font-bold">Syarat Kualifikasi</h4>
+                <p>
+                    {{ detail.syaratKualifikasi }}
+                </p>
+            </div>
+            <a href="https://lpse.surabaya.go.id/eproc4/lelang/{{ detail.kodeTender }}/pengumumanlelang"
+                class="p-4 border-2 rounded-lg duration-150 bg-white hover:bg-red-500 mx-auto" target="_blank">
+                Lihat Dokumen
+            </a>
+        </div>
     </div>
 
     {% endif %}

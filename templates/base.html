@@ -14,14 +14,13 @@
 </head>
 
 <body>
-    <nav class="h-16 text-lg p-4">
-        <div class="">
-            <img src="{{ url_for('static', filename='kawalpembagnunanlogo.jpg') }}" alt="">
+    <nav class="h-16 text-lg p-4 border-b-2 border-black ">
+        <div class="relative">
             <span class="font-bold uppercase text-lg">
                 Kawal Pembangunan
             </span>
             <a href="{{ url_for('home') }}" class="hover:text-red-500 mx-16 ease-linear duration-100">Home</a>
-            <a href="#" class="hover:text-red-500 mx-16 ease-linear duration-100">FAQ</a>
+            <a href="{{ url_for('faq') }}" class="hover:text-red-500 mx-16 ease-linear duration-100">FAQ</a>
             <a href="#" class="hover:text-red-500 mx-16 ease-linear duration-100">Laporkan</a>
         </div>
     </nav>

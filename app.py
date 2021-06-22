@@ -35,10 +35,19 @@ class pembangunanSektorTable(db.Model):
     def __repr__(self):
          return f'{self.kodeTender}'
 
+class kerjasamaTable(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    aliasInstansi = db.Column(db.String(length=1024), nullable=False)
+    namaInstansi = db.Column(db.String(length=1024), nullable=False)
+
+    def __repr__(self):
+        return f'{self.aliasInstansi}'
+
 @app.route("/home")
 def home():
     sektor = sektorTable.query.all()
-    return render_template("index.html", sektor = sektor)
+    instansi = kerjasamaTable.query.all()
+    return render_template("index.html", sektor = sektor, instansi = instansi)
 
 @app.route("/sektor/<sektor>")
 def sektor(sektor):
@@ -49,6 +58,10 @@ def sektor(sektor):
 def detail(kodeTender):
     detail = pembangunanSektorTable.query.filter_by(kodeTender = kodeTender).first()
     return render_template("detail.html", detail = detail)
+
+@app.route('/faq')
+def faq():
+    return render_template("faq.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
